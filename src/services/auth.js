@@ -6,8 +6,9 @@ export async function login(email, password) {
   });
 
   const data = await res.json();
-  if (res.ok && data.token) {
-    localStorage.setItem('token', data.token);
+  // console.log(data)
+  if (res.ok && data.access_token) {
+    localStorage.setItem('token',data.token_type + " " + data.access_token);
     return true;
   }
 

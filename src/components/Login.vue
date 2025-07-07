@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center vw-100vw vh-100 bg-dark text-light">
-    <div class="card bg-secondary text-light p-4 shadow-lg" style="min-width: 320px; max-width: 400px; width: 100%;">
+  <div class="d-flex justify-content-center bg-dark text-light vh-100 align-items-center">
+    <div class="card bg-secondary text-light shadow-lg vh-100 align-items-center justify-content-center" >
       <h3 class="text-center mb-3">Login</h3>
       <form @submit.prevent="handleLogin">
         <div class="mb-3">
@@ -37,8 +37,8 @@ const handleLogin = async () => {
   error.value = null;
   try {
     await login(email.value, password.value);
-    alert("login")
-    // router.push('/dashboard'); // or whatever route is protected
+    router.push('/');
+
   } catch (err) {
     error.value = err.message || 'Invalid credentials';
   } finally {
